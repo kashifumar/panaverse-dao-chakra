@@ -16,6 +16,7 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
@@ -25,19 +26,28 @@ const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const handleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
     <Box bg="blue.900" color="white" px={4} py={2}>
       <Flex justify="space-between" align="center">
         <Image src={logo} alt="Logo" w={10} h={10} />
         <Flex align="center">
           <Switch isChecked={isDarkMode} onChange={handleDarkMode} mr={2} />
-          <Box display={{ base: "block", md: "none" }} fontSize="3xl">
+          <Box
+            display={{ base: "block", md: "none" }}
+            fontSize="3xl"
+            onClick={handleMobileMenu}
+            cursor="pointer"
+          >
             <FaBars />
           </Box>
         </Flex>
       </Flex>
       <Box
-        display={{ base: "none", md: "block" }}
+        display={{ base: showMobileMenu ? "block" : "none", md: "none" }}
         fontSize="xl"
         fontWeight="bold"
         mt={4}
@@ -46,7 +56,7 @@ const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
           <Box
             key={menuItem.label}
             as="span"
-            ml={8}
+            mb={4}
             cursor="pointer"
             onClick={() => menuItem.subMenu && handleSubMenu()}
             position="relative"
