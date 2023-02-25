@@ -1,0 +1,12 @@
+npx create-next-app@latest --experimental
+panaverse-dao-chakra
+
+npm i @chakra-ui/icons
+npm i @chakra-ui/react
+npm i @emotion/react
+npm i @emotion/styled
+npm i framer-motion
+npm i react-fetching-library
+npm i react-icons
+
+npm i -D @types/node @types/react @types/react-dom
