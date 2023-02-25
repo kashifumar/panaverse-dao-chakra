@@ -1,6 +1,6 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
-import React from "react";
-import { FaBars } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaBars, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface MenuItem {
   label: string;
@@ -14,6 +14,12 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
+  const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const handleSubMenu = () => {
+    setShowSubMenu(!showSubMenu);
+  };
+
   return (
     <Box bg="blue.900" color="white" px={4} py={2}>
       <Flex justify="space-between" align="center">
@@ -29,8 +35,40 @@ const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
         mt={4}
       >
         {menuItems.map((menuItem) => (
-          <Box key={menuItem.label} as="span" ml={8}>
+          <Box
+            key={menuItem.label}
+            as="span"
+            ml={8}
+            cursor="pointer"
+            onClick={() => menuItem.subMenu && handleSubMenu()}
+            position="relative"
+          >
             {menuItem.label}
+            {menuItem.subMenu && (
+              <Box
+                position="absolute"
+                top="100%"
+                left="0"
+                bg="blue.900"
+                py={2}
+                px={4}
+                zIndex={10}
+                opacity={showSubMenu ? 1 : 0}
+                transition="opacity 0.2s"
+                pointerEvents={showSubMenu ? "auto" : "none"}
+              >
+                {menuItem.subMenu.map((subMenuItem) => (
+                  <Box key={subMenuItem.label} mb={2}>
+                    <a href={subMenuItem.link}>{subMenuItem.label}</a>
+                  </Box>
+                ))}
+              </Box>
+            )}
+            {menuItem.subMenu && (
+              <Box as="span" ml={2}>
+                {showSubMenu ? <FaChevronUp /> : <FaChevronDown />}
+              </Box>
+            )}
           </Box>
         ))}
       </Box>
