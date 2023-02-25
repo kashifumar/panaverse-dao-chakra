@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image, Switch } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaBars, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -15,18 +15,26 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ logo, menuItems }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
+  };
+
+  const handleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
     <Box bg="blue.900" color="white" px={4} py={2}>
       <Flex justify="space-between" align="center">
         <Image src={logo} alt="Logo" w={10} h={10} />
-        <Box display={{ base: "block", md: "none" }} fontSize="3xl">
-          <FaBars />
-        </Box>
+        <Flex align="center">
+          <Switch isChecked={isDarkMode} onChange={handleDarkMode} mr={2} />
+          <Box display={{ base: "block", md: "none" }} fontSize="3xl">
+            <FaBars />
+          </Box>
+        </Flex>
       </Flex>
       <Box
         display={{ base: "none", md: "block" }}
