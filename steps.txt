@@ -8,5 +8,7 @@ npm i @emotion/styled
 npm i framer-motion
 npm i react-fetching-library
 npm i react-icons
+npm i next-images
 
 npm i -D @types/node @types/react @types/react-dom
+

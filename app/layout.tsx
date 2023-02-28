@@ -2,6 +2,7 @@
 
 // import './globals.css'
 import ChakraWrapper from "@/components/chakra";
+import Footer from "@/components/Footer";
 import MenuBar from "@/components/MenuBar";
 
 const links = [
@@ -64,6 +65,7 @@ export default function RootLayout({
         <ChakraWrapper>
           <MenuBar menuItems={links} logo={logo} />
           {children}
+          <Footer />
         </ChakraWrapper>
       </body>
     </html>

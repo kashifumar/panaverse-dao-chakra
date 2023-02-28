@@ -1,0 +1,1 @@
+export { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
