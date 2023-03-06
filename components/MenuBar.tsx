@@ -11,7 +11,7 @@ import { useTheme, useBreakpointValue } from "@chakra-ui/react";
 
 interface MenuItem {
   name: string;
-  href: string;
+  href?: string;
   subMenu?: {
     name: string;
     href: string;
@@ -20,9 +20,10 @@ interface MenuItem {
 
 interface MenuProps {
   menuItems: MenuItem[];
+  logo: string;
 }
 
-const MenuBar: React.FC<MenuProps> = ({ menuItems }) => {
+const MenuBar: React.FC<MenuProps> = ({ menuItems, logo }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const theme = useTheme();
   const maxW = useBreakpointValue({ base: "full", md: "container.xl" });
@@ -39,7 +40,8 @@ const MenuBar: React.FC<MenuProps> = ({ menuItems }) => {
         {/* Logo image here */}
         <Box>
           <Image
-            src="/images/panaverse_dao_logo.png"
+            // src="/images/panaverse_dao_logo.png"
+            src={logo}
             alt="Logo"
             width="48px"
             height="48px"

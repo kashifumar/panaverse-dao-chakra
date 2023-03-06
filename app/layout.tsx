@@ -8,47 +8,69 @@ import MenuBar from "@/components/MenuBar";
 const links = [
   {
     name: "Home",
-    link: "/",
+    href: "/",
   },
   {
-    name: "About",
-    link: "/about",
+    name: "Specializations",
+    // href: "/courses",
     subMenu: [
       {
-        name: "Mission",
-        link: "/about/mission",
+        name: "Core Courses",
+        href: "/courses/core-courses",
       },
       {
-        name: "Team",
-        link: "/about/team",
+        name: "Web 3.0 (Blockchain) and Metaverse",
+        href: "/courses/web3-metaverse",
+      },
+      {
+        name: "Artificial Intelligence (AI) and Deep Learning",
+        href: "/courses/ai-deep-learning",
+      },
+      {
+        name: "Cloud-Native Computing",
+        href: "/courses/cloud-native-computing",
+      },
+      {
+        name: "Ambient Computing and IoT",
+        href: "/courses/ambient-computing-iot",
       },
     ],
   },
   {
-    name: "Services",
-    link: "/services",
+    name: "Topics",
+    // href: "/topics",
     subMenu: [
       {
-        name: "Web Design",
-        link: "/services/web-design",
+        name: "HTML",
+        href: "/topics/html",
       },
       {
-        name: "SEO",
-        link: "/services/seo",
+        name: "CSS",
+        href: "/topics/css",
       },
       {
-        name: "Social Media",
-        link: "/services/social-media",
+        name: "JavaScript",
+        href: "/topics/javascript",
+      },
+      {
+        name: "TypeScript",
+        href: "/topics/typescript",
       },
     ],
   },
   {
-    name: "Contact",
-    link: "/contact",
+    name: "Assignments",
+    // href: "assignments",
+    subMenu: [
+      { name: "Assignment # 1", href: "assign1" },
+      { name: "Assignment # 2", href: "assign2" },
+    ],
   },
+  { name: "About Us", href: "/about-us" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
-const logo = "/public/images/panaverse_dao_logo.png";
+const logo = "/images/panaverse_dao_logo.png";
 export default function RootLayout({
   children,
 }: {
