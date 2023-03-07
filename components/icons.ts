@@ -1,1 +1,1 @@
-export { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+export { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";

@@ -11,4 +11,17 @@ npm i react-icons
 npm i next-images
 
 npm i -D @types/node @types/react @types/react-dom
+npm i react-markdown
+npm i remark-gfm@1.0.0
+npm i raw-loader
+npm i gray-matter
 
+  npm install @next/mdx @mdx-js/loader @mdx-js/react
+
+npm i remark
+npm i remark-html
+npm i rehype
+npm i rehype-react
+
+
+npm i @types/rehype-react

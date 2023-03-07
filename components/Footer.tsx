@@ -1,7 +1,13 @@
 import { Box, Flex, IconButton, Link, Text, Stack } from "@chakra-ui/react";
-import { FaFacebook, FaTwitter, FaInstagram } from "@/components/icons";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+} from "@/components/icons";
 import Image from "next/image";
 import NextLink from "next/link";
+import { siteMetadata } from "@/content/siteMetadata";
 
 export default function Footer() {
   return (
@@ -24,13 +30,13 @@ export default function Footer() {
             height={48}
           />
           <Text fontSize="sm" mt={2}>
-            © 2023 Company Name. All rights reserved.
+            © 2023 {siteMetadata.author}. All rights reserved.
           </Text>
         </Box>
         {/* Second Section */}
         <Box mt={{ base: 4, md: 0 }}>
           <Stack direction="row" spacing={4}>
-            <Link href="#" isExternal>
+            <Link href={siteMetadata.facebook} isExternal>
               <IconButton
                 aria-label="Facebook"
                 icon={<FaFacebook />}
@@ -38,7 +44,7 @@ export default function Footer() {
                 variant="ghost"
               />
             </Link>
-            <Link href="#" isExternal>
+            <Link href={siteMetadata.twitter} isExternal>
               <IconButton
                 aria-label="Twitter"
                 icon={<FaTwitter />}
@@ -46,10 +52,18 @@ export default function Footer() {
                 variant="ghost"
               />
             </Link>
-            <Link href="#" isExternal>
+            <Link href={siteMetadata.instagram} isExternal>
               <IconButton
                 aria-label="Instagram"
                 icon={<FaInstagram />}
+                size="md"
+                variant="ghost"
+              />
+            </Link>
+            <Link href={siteMetadata.github} isExternal>
+              <IconButton
+                aria-label="Github"
+                icon={<FaGithub />}
                 size="md"
                 variant="ghost"
               />

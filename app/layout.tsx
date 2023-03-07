@@ -1,6 +1,5 @@
 "use client";
-
-// import './globals.css'
+import "./globals.css";
 import ChakraWrapper from "@/components/chakra";
 import Footer from "@/components/Footer";
 import MenuBar from "@/components/MenuBar";
@@ -58,14 +57,14 @@ const links = [
       },
     ],
   },
-  {
-    name: "Assignments",
-    // href: "assignments",
-    subMenu: [
-      { name: "Assignment # 1", href: "assign1" },
-      { name: "Assignment # 2", href: "assign2" },
-    ],
-  },
+  // {
+  //   name: "Assignments",
+  //   // href: "assignments",
+  //   subMenu: [
+  //     { name: "Assignment # 1", href: "assign1" },
+  //     { name: "Assignment # 2", href: "assign2" },
+  //   ],
+  // },
   { name: "About Us", href: "/about-us" },
   { name: "Contact Us", href: "/contact-us" },
 ];
