@@ -12,12 +12,12 @@ const siteMetadata = {
   // image: "/static/images/avatar.png",
   // socialBanner: "/static/images/twitter-card.png",
   email: "address@yoursite.com",
-  github: "https://github.com",
-  twitter: "https://twitter.com/",
-  facebook: "https://facebook.com",
+  github: "https://github.com/kashifumar/panaverse-dao-chakra",
+  twitter: "https://twitter.com/kashif_umar",
+  facebook: "https://www.facebook.com/kashif.umar2",
   youtube: "https://youtube.com",
-  instagram: "https://instagram.com",
-  linkedin: "https://www.linkedin.com",
+  instagram: "https://www.instagram.com/kashif_27/",
+  linkedin: "https://www.linkedin.com/in/kashif-umar/",
   locale: "en-US",
 };
 

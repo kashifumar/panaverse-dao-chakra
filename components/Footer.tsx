@@ -4,6 +4,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaGithub,
+  FaLinkedin,
 } from "@/components/icons";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -52,10 +53,10 @@ export default function Footer() {
                 variant="ghost"
               />
             </Link>
-            <Link href={siteMetadata.instagram} isExternal>
+            <Link href={siteMetadata.linkedin} isExternal>
               <IconButton
-                aria-label="Instagram"
-                icon={<FaInstagram />}
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
                 size="md"
                 variant="ghost"
               />
